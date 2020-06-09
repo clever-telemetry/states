@@ -2,8 +2,6 @@ package states
 
 import (
 	"net/http"
-
-	stateshttp "github.com/clever-telemetry/states/http"
 )
 
 // Our custom state
@@ -37,7 +35,7 @@ func Example() {
 	// later in the code
 	mystate.Set(READY)
 
-	http.Handle("/states", stateshttp.Handler())
+	//http.Handle("/states", stateshttp.Handler())
 	// http.Handle("/metrics", promhttp.Handler())
 	http.ListenAndServe(":8080", nil)
 }

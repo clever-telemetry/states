@@ -109,6 +109,7 @@ func TestNewState(t *testing.T) {
 	}
 }
 
+//nolint:govet
 func Test_iState_Metric(t *testing.T) {
 	type fields struct {
 		RWMutex sync.RWMutex
@@ -136,7 +137,6 @@ func Test_iState_Metric(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			state := &iState{
-				RWMutex: tt.fields.RWMutex,
 				options: tt.fields.options,
 				value:   tt.fields.value,
 				time:    tt.fields.time,

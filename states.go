@@ -29,6 +29,7 @@ type (
 		System    string `json:"system,omitempty"`
 		Name      string `json:"name"`
 		Help      string `json:"help,omitempty"`
+		Labels map[string]string `json:"labels"`
 	}
 
 	// Registry collect a set of app states

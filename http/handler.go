@@ -27,7 +27,7 @@ func HandlerFor(registry states.Registry) http.Handler {
 		res.Header().Set("Content-Type", "text/plain")
 		res.WriteHeader(http.StatusOK)
 
-		res.Write([]byte(fmt.Sprintf("# %d states\n", len(gtsList))))
+		_, _ = res.Write([]byte(fmt.Sprintf("# %d states\n", len(gtsList))))
 
 		_, _ = res.Write([]byte(gtsList.Sensision()))
 	})

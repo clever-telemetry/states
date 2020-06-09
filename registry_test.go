@@ -8,6 +8,7 @@ import (
 	warp10 "github.com/miton18/go-warp10/base"
 )
 
+//nolint:govet
 func Test_iRegistry_Register(t *testing.T) {
 	type fields struct {
 		RWMutex sync.RWMutex
@@ -66,6 +67,7 @@ func Test_iRegistry_Register(t *testing.T) {
 	}
 }
 
+//nolint:govet
 func Test_iRegistry_MustRegister(t *testing.T) {
 	type fields struct {
 		RWMutex sync.RWMutex
@@ -119,6 +121,7 @@ func Test_iRegistry_MustRegister(t *testing.T) {
 	}
 }
 
+//nolint:govet
 func Test_iRegistry_Gather(t *testing.T) {
 	testGts := warp10.NewGTS("mystate")
 	testGts.Values.Add(time.Now(), "UNKNOWN")

@@ -36,7 +36,7 @@ func (state *iState) Metric() *warp10.GTS {
 	defer state.RUnlock()
 
 	labels := warp10.Labels(state.options.Labels)
-	gts := warp10.NewGTSWithLabels(state.key("."), labels)
+	gts := warp10.NewGTSWithLabels(state.key(Separator), labels)
 
 	if state.options.Help != "" {
 		gts.Attributes = warp10.Attributes{

@@ -8,6 +8,8 @@ var (
 
 	// DefaultStateValue is used when the state is not known
 	DefaultStateValue = defaultStateValue{}
+
+	Separator = "."
 )
 
 // MustRegister register a state to the default Registry

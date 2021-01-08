@@ -25,11 +25,12 @@ type (
 
 	// StateOptions is used to declare a new State
 	StateOptions struct {
-		Namespace string `json:"namespace,omitempty"`
-		System    string `json:"system,omitempty"`
-		Name      string `json:"name"`
-		Help      string `json:"help,omitempty"`
-		Labels map[string]string `json:"labels"`
+		Namespace string            `json:"namespace,omitempty"`
+		System    string            `json:"system,omitempty"`
+		Name      string            `json:"name"`
+		Help      string            `json:"help,omitempty"`
+		Labels    map[string]string `json:"labels"`
+		Separator string            `json:"separator,omitemepty"`
 	}
 
 	// Registry collect a set of app states

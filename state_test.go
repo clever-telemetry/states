@@ -41,6 +41,7 @@ func TestNewState(t *testing.T) {
 				System:    "sys",
 				Name:      "state",
 			},
+			separator: DefaultSeparator,
 			value: "READY",
 		},
 	}, {
@@ -59,6 +60,7 @@ func TestNewState(t *testing.T) {
 				System:    "sys",
 				Name:      "state",
 			},
+			separator: DefaultSeparator,
 			value: DefaultStateValue.String(),
 		},
 	}}

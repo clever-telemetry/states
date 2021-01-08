@@ -2,14 +2,16 @@ package states
 
 import warp10 "github.com/miton18/go-warp10/base"
 
+const (
+	DefaultSeparator = "."
+)
+
 var (
 	// DefaultRegistry is ...
 	DefaultRegistry = NewRegistry()
 
 	// DefaultStateValue is used when the state is not known
 	DefaultStateValue = defaultStateValue{}
-
-	Separator = "."
 )
 
 // MustRegister register a state to the default Registry

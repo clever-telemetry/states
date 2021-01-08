@@ -14,6 +14,7 @@ type iState struct {
 	options StateOptions
 	value   string
 	time    time.Time
+	separator string
 }
 
 // NewState create a new state
@@ -28,6 +29,13 @@ func NewState(options StateOptions, initialValue fmt.Stringer) State {
 		state.Set(initialValue)
 	}
 
+	if options.Separator != "" {
+		state.separator = options.Separator
+	} else {
+		state.separator = DefaultSeparator
+	}
+
+
 	return state
 }
 
@@ -36,7 +44,7 @@ func (state *iState) Metric() *warp10.GTS {
 	defer state.RUnlock()
 
 	labels := warp10.Labels(state.options.Labels)
-	gts := warp10.NewGTSWithLabels(state.key(Separator), labels)
+	gts := warp10.NewGTSWithLabels(state.key(state.separator), labels)
 
 	if state.options.Help != "" {
 		gts.Attributes = warp10.Attributes{
